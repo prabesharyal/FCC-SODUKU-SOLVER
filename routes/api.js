@@ -20,13 +20,14 @@ module.exports = function (app) {
       I: 8,
     };
 
-    const coords = coordinate && coordinate.split("");
+    const coords = coordinate && coordinate.split(/(\d+)/);
+    console.log(coords);
 
     let row;
     let col;
     if (coords) {
       row = rows[coords[0]];
-      col = coords[1] - 1;
+      col = parseInt(coords[1]) - 1;
     }
 
     if (!puzzle || !coordinate || !value) {
