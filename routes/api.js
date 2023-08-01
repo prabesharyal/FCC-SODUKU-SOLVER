@@ -42,7 +42,7 @@ module.exports = function (app) {
       return res.json({ error: "Expected puzzle to be 81 characters long" });
     }
 
-    if (row === undefined || col < 0 || col > 8) {
+    if (row === undefined || isNaN(col) || col < 0 || col > 8) {
       return res.json({ error: "Invalid coordinate" });
     }
 
